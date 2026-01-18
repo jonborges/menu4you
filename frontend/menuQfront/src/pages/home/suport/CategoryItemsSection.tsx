@@ -1,11 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import styles from './CategoryItemsSection.module.css';
 import { categories } from './CategoryCards';
 import * as api from '../../../services/api';
 import { useItemModal } from '../../../contexts/ItemModalContext';
-import { useCart } from '../../../contexts/CartContext';
-import { useNotification } from '../../../contexts/NotificationContext';
 
 interface Item {
   id: number;
@@ -25,9 +22,6 @@ export default function CategoryItemsSection({ restaurantId }: CategoryItemsSect
   const [itemsByCategory, setItemsByCategory] = useState<Record<string, Item[]>>({});
   const [loading, setLoading] = useState(true);
   const { openModal } = useItemModal();
-  const { addItem } = useCart();
-  const { show } = useNotification();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const loadItems = async () => {

@@ -75,7 +75,7 @@ export function QRCodeGenerator({ restaurantId, restaurantName, tableCount, onTa
                       <h2>${restaurantName}</h2>
                       <h3>Mesa ${tableNumber}</h3>
                       <div style="display: inline-block;">
-                        ${generateSVGString(url)}
+                        ${generateSVGString()}
                       </div>
                       <p>Aponte a câmera do celular para ver o cardápio</p>
                     </div>
@@ -94,15 +94,8 @@ export function QRCodeGenerator({ restaurantId, restaurantName, tableCount, onTa
   };
 
   const generateSVGString = () => {
-    const temp = document.createElement('div');
-    const qrCode = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    qrCode.setAttribute('width', '200');
-    qrCode.setAttribute('height', '200');
-    temp.appendChild(qrCode);
-    
-    // Criar QR code SVG manualmente usando a biblioteca
+    // Placeholder - será substituído pelo QR Code real
     return `<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <!-- Placeholder - será substituído pelo QR Code real -->
       <rect width="200" height="200" fill="white"/>
     </svg>`;
   };

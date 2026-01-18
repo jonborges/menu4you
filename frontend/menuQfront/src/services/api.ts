@@ -114,6 +114,7 @@ export async function loginUser(username: string, password: string) {
   }
 }
 
+/* Unused local storage functions - kept for potential future use
 function createRestaurantLocal(payload: any) {
   const list = readLocal('local_restaurants');
   const id = nextId(list) + 1000;
@@ -164,6 +165,7 @@ function deleteEmployeeLocal(id: number) {
   const filtered = list.filter((e: any) => Number(e.id) !== Number(id));
   writeLocal('local_employees', filtered);
 }
+*/
 
 // --- API CALLS ---
 

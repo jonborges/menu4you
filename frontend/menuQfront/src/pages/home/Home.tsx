@@ -179,13 +179,8 @@ export default function Home() {
             </div>
           </section>
 
-          {restaurantId ? (
-            <>
-              {console.log('Home - Renderizando CategoryItemsSection com restaurantId:', restaurantId)}
-              <CategoryItemsSection restaurantId={restaurantId} />
-            </>
-          ) : (
-            console.log('Home - restaurantId é null, não renderizando CategoryItemsSection')
+          {restaurantId && (
+            <CategoryItemsSection restaurantId={restaurantId} />
           )}
 
           <section>
