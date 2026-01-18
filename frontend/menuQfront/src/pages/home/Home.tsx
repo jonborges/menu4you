@@ -80,7 +80,7 @@ function HowItWorksSection() {
         {steps.map((step, index) => (
           <div
             key={index}
-            ref={el => stepRefs.current[index] = el}
+            ref={el => { stepRefs.current[index] = el; }}
             className={`${styles.stepCard} ${visibleSteps.includes(index) ? styles.visible : ''}`}
             style={{ transitionDelay: `${index * 150}ms` }}
           >
