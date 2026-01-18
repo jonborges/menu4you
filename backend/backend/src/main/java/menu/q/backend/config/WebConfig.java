@@ -50,8 +50,12 @@ public class WebConfig implements WebMvcConfigurer {
         
         // Em produção, usar domínios específicos da variável de ambiente
         // Ex: ALLOWED_ORIGINS=https://meusite.com,https://www.meusite.com
+        // Aceita todos os domínios .vercel.app para preview deployments
         Arrays.stream(allowedOrigins.split(","))
             .forEach(config::addAllowedOrigin);
+        
+        // Aceita qualquer subdomínio .vercel.app (preview deployments)
+        config.addAllowedOriginPattern("https://*.vercel.app");
         
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
