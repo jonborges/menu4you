@@ -93,7 +93,7 @@ export function QRCodeGenerator({ restaurantId, restaurantName, tableCount, onTa
     }
   };
 
-  const generateSVGString = (url: string) => {
+  const generateSVGString = () => {
     const temp = document.createElement('div');
     const qrCode = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     qrCode.setAttribute('width', '200');

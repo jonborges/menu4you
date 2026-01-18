@@ -1,4 +1,3 @@
-import React from 'react';
 import { X } from 'lucide-react';
 import { useItemModal } from '../../contexts/ItemModalContext';
 import { useCart } from '../../contexts/CartContext';
