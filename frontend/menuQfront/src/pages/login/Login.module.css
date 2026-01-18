@@ -1,0 +1,154 @@
+/* Variáveis de estilo Editorial */
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fcfaf7; /* creme suave */
+  font-family: 'Inter', sans-serif;
+}
+
+.loginContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.loginCard {
+  background: white;
+  padding: 4rem 3rem;
+  border-radius: 32px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  max-width: 460px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #1a3a32; /* brand-deep */
+  background: transparent;
+  display: block;
+  padding: 0;
+  transform: none;
+  margin-bottom: 3rem;
+  box-shadow: none;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+/* Detalhe decorativo abaixo do título */
+.title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #f97316;
+  margin: 1rem auto 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1a3a32;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  opacity: 0.6;
+}
+
+.input {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 50px; /* formato pílula */
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: #fcfaf7;
+  font-size: 0.95rem;
+  font-weight: 400;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.input:focus {
+  background-color: #fff;
+  border-color: #1a3a32;
+  box-shadow: 0 8px 20px rgba(26, 58, 50, 0.05);
+}
+
+.loginButton {
+  background: #1a3a32;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 1.1rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+  box-shadow: 0 10px 25px rgba(26, 58, 50, 0.15);
+}
+
+.loginButton:hover {
+  background: #f97316; /* Laranja no hover para feedback de ação */
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(249, 115, 22, 0.25);
+}
+
+.loginButton:active {
+  transform: translateY(0);
+}
+
+.linksContainer {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.link {
+  color: #888;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.link:hover {
+  color: #1a3a32;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 480px) {
+  .loginCard {
+    padding: 3rem 1.5rem;
+    border-radius: 24px;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+}

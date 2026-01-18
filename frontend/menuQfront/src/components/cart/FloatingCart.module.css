@@ -1,0 +1,223 @@
+/* Variáveis de estilo Editorial */
+.wrapper {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1200;
+  font-family: 'Inter', sans-serif;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.wrapperLeft {
+  transform: translateX(calc(-100vw + 100% + 48px));
+}
+
+/* FAB - Botão Flutuante Elegante */
+.fab {
+  background: #1a3a32; /* brand-deep */
+  border: none;
+  border-radius: 50px;
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 10px 30px rgba(26, 58, 50, 0.25);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.fab:hover {
+  transform: translateY(-4px);
+  background: #234d42;
+  box-shadow: 0 15px 35px rgba(26, 58, 50, 0.3);
+}
+
+.badge {
+  background: #f97316; /* brand-accent */
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 2px solid #1a3a32;
+}
+
+.total { 
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+/* Painel do Carrinho */
+.panel {
+  width: 380px;
+  max-width: calc(100vw - 48px);
+  max-height: 80vh;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 28px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 20px;
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.header { 
+  background: #fcfaf7;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+
+.header h2 {
+  font-family: 'Playfair Display', serif;
+  color: #1a3a32;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.close { 
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close:hover {
+  color: #1a3a32;
+}
+
+/* Itens */
+.items { 
+  padding: 1rem 2rem; 
+  overflow-y: auto; 
+  flex: 1;
+}
+
+.itemRow { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 1.25rem 0; 
+  border-bottom: 1px solid #fcfaf7;
+}
+
+.itemName { 
+  font-weight: 600; 
+  font-size: 0.95rem; 
+  color: #2d2a26;
+  margin-bottom: 2px;
+  display: block;
+}
+
+.itemMeta { 
+  font-size: 0.8rem; 
+  color: #888; 
+}
+
+.itemActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.itemActions button { 
+  background: #fcfaf7;
+  border: 1px solid #eee;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.itemActions button:hover {
+  background: #1a3a32;
+  color: white;
+  border-color: #1a3a32;
+}
+
+.removeItem {
+  color: #cc4444;
+  margin-left: 4px;
+}
+
+/* Footer do Carrinho */
+.footer { 
+  padding: 2rem; 
+  background: #fcfaf7;
+  border-top: 1px solid rgba(0,0,0,0.03);
+  display: flex; 
+  flex-direction: column; 
+  gap: 1.25rem; 
+}
+
+.footerTotalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerTotalLabel {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.footerTotalValue {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a3a32;
+}
+
+/* Botão Checkout */
+.checkoutButton { 
+  width: 100%;
+  background: #1a3a32; 
+  color: #fff; 
+  border: none; 
+  padding: 1.1rem; 
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 50px; 
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(26, 58, 50, 0.15);
+  transition: all 0.3s ease;
+}
+
+.checkoutButton:hover:not(:disabled) {
+  background: #f97316; /* Muda para laranja no checkout final */
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.2);
+}
+
+.checkoutButton:disabled {
+  background: #ddd;
+  cursor: not-allowed;
+  box-shadow: none;
+}

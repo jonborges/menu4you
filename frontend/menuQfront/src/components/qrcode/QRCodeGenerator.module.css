@@ -1,0 +1,312 @@
+.container {
+  background: #ffffff;
+  border: 1px solid rgba(26, 58, 50, 0.08);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  margin-bottom: 3rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(26, 58, 50, 0.06);
+}
+
+.header h2 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a3a32;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.header h2::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: #f97316;
+  border-radius: 50%;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.tableControl {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fcfaf7;
+  padding: 8px 16px;
+  border-radius: 50px;
+  border: 1px solid rgba(26, 58, 50, 0.1);
+}
+
+.controlButton {
+  background: white;
+  color: #1a3a32;
+  border: 2px solid #1a3a32;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(26, 58, 50, 0.1);
+}
+
+.controlButton:hover:not(:disabled) {
+  background: #1a3a32;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 58, 50, 0.2);
+}
+
+.controlButton:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.tableCount {
+  font-weight: 700;
+  color: #1a3a32;
+  min-width: 85px;
+  text-align: center;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.toggleButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(102, 126, 234, 0.3);
+}
+
+.toggleButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+}
+
+.printButton {
+  background: #1a3a32;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(26, 58, 50, 0.3);
+}
+
+.printButton:hover {
+  background: #244f44;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(26, 58, 50, 0.4);
+}
+
+.paginationActions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(26, 58, 50, 0.06);
+}
+
+.showMoreButton,
+.showLessButton {
+  background: #1a3a32;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(26, 58, 50, 0.25);
+}
+
+.showMoreButton:hover,
+.showLessButton:hover {
+  background: #244f44;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(26, 58, 50, 0.35);
+}
+
+.showLessButton {
+  background: transparent;
+  color: #1a3a32;
+  border: 2px solid #1a3a32;
+  box-shadow: none;
+}
+
+.showLessButton:hover {
+  background: rgba(26, 58, 50, 0.05);
+  box-shadow: none;
+}
+
+.description {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.qrGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.qrCard {
+  background: #fcfaf7;
+  border: 2px solid rgba(26, 58, 50, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.qrCard:hover {
+  border-color: #f97316;
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.12);
+  transform: translateY(-4px);
+}
+
+.qrCard h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+  color: #f97316;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+}
+
+.qrCodeWrapper {
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(26, 58, 50, 0.06);
+}
+
+.downloadButton {
+  background: transparent;
+  color: #1a3a32;
+  border: 2px solid #1a3a32;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.downloadButton:hover {
+  background: #1a3a32;
+  color: white;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .header h2 {
+    font-size: 1.5rem;
+  }
+
+  .actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .tableControl,
+  .printButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .qrGrid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  .qrCard {
+    padding: 1rem;
+  }
+
+  .qrCard h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media print {
+  .toggleButton,
+  .printButton,
+  .closeButton,
+  .downloadButton,
+  .description {
+    display: none;
+  }
+
+  .container {
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .qrGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .qrCard {
+    border: 3px solid #333;
+    page-break-inside: avoid;
+    padding: 30px;
+  }
+}

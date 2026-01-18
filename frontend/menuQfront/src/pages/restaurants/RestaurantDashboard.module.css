@@ -1,0 +1,369 @@
+/* Definição de variáveis locais para garantir consistência neste módulo */
+.pageWrapper {
+  --bg-primary: #fcfaf7;
+  --text-main: #2d2a26;
+  --brand-deep: #1a3a32;
+  --brand-accent: #f97316; /* Laranja */
+  --card-bg: #ffffff;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  font-family: var(--font-sans);
+  color: var(--text-main);
+}
+
+.container {
+  flex: 1;
+  padding: 4rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* --- Header Section (Capa do Restaurante) --- */
+.headerSection {
+  background: var(--card-bg);
+  border: 1px solid rgba(26, 58, 50, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(26, 58, 50, 0.08);
+  margin-bottom: 3rem;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.coverImage {
+  height: 220px;
+  background-color: #eee;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Texto placeholder caso não tenha imagem */
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 2rem;
+  color: rgba(26, 58, 50, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.coverImage::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 80px;
+  background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+}
+
+.restaurantInfo {
+  padding: 2.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.restaurantName {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--brand-deep);
+  margin: -1rem 0 0.5rem 0; /* Puxa um pouco pra cima */
+  line-height: 1.1;
+}
+
+.restaurantDesc {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.actionsRow {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* --- Cards Gerais (Seções) --- */
+.card {
+  background: var(--card-bg);
+  border: 1px solid rgba(26, 58, 50, 0.08);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--brand-deep);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sectionTitle::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: var(--brand-accent);
+  border-radius: 50%;
+}
+
+/* --- Formulários --- */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--brand-deep);
+  opacity: 0.8;
+}
+
+.input, .select {
+  padding: 1rem 1.25rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px; /* Redondo mas não pílula completa */
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text-main);
+  background: #fff;
+  width: 100%;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input:focus, .select:focus {
+  border-color: var(--brand-accent);
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.15);
+}
+
+.fileInputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+/* --- Botões --- */
+.btn {
+  background: var(--brand-deep);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 20px -5px rgba(26, 58, 50, 0.4);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #244f44;
+  box-shadow: 0 12px 24px -5px rgba(26, 58, 50, 0.5);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btnSecondary {
+  background: transparent;
+  color: var(--brand-deep);
+  padding: 1rem 2rem;
+  border: 2px solid var(--brand-deep);
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.btnSecondary:hover {
+  background: rgba(26, 58, 50, 0.05);
+  transform: translateY(-2px);
+}
+
+/* --- Grid de Itens (Menu/Equipe) --- */
+.itemsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.itemCard {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.itemCard:hover {
+  border-color: var(--brand-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.itemImage {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  background-color: #f3f3f3;
+  background-size: cover;
+  background-position: center;
+  margin-right: 1.25rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Container para os botões de ação (canto superior direito) */
+.cardActions {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+/* Estilo base dos botões de ação (Editar/Excluir) */
+.actionBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background: white;
+  backdrop-filter: blur(4px);
+  color: #4b5563; /* Cinza escuro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.actionBtn:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-accent);
+  color: var(--brand-accent);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.15);
+}
+
+/* Estilo específico para o botão de excluir quando pede confirmação */
+.deleteBtnConfirm {
+  background: #ef4444 !important;
+  border-color: #ef4444 !important;
+  color: white !important;
+  animation: shake 0.3s ease-in-out;
+}
+
+
+
+.itemInfo {
+  flex: 1;
+  min-width: 0; /* Previne overflow de texto */
+}
+
+.itemTitle {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--brand-deep);
+  margin-bottom: 0.25rem;
+}
+
+.itemDesc {
+  font-size: 0.9rem;
+  color: #888;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.itemPrice {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--brand-accent);
+  margin-top: 0.5rem;
+}
+
+/* Skeleton Loading */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #f8f8f8 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Vazio */
+.emptyState {
+  text-align: center;
+  padding: 3rem;
+  color: #999;
+  font-style: italic;
+  font-family: var(--font-serif);
+}
+
+/* Inputs Lado a Lado */
+.rowInputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .rowInputs {
+    grid-template-columns: 1fr;
+  }
+  .headerSection {
+    border-radius: 0 0 24px 24px;
+    margin-top: -2rem; /* Cola no topo em mobile */
+  }
+}

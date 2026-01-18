@@ -1,0 +1,125 @@
+/* Estrutura Principal - Limpa e Espaçosa */
+.container {
+  width: 100%;
+  background: #ffffff;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 5rem 2.5rem;
+  margin-top: 8rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Identidade da Marca no Footer */
+.brand {
+  flex: 1;
+  min-width: 280px;
+}
+
+.brand h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #1a3a32; /* brand-deep */
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  position: relative;
+}
+
+/* Detalhe do ponto laranja para manter consistência com o Header */
+.brand h2::after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: #f97316; /* brand-accent */
+  border-radius: 50%;
+  position: absolute;
+  right: -10px;
+  bottom: 10px;
+}
+
+.brand p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #666;
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.copyright {
+  margin-top: 3rem;
+  font-size: 0.75rem;
+  color: #aaa;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Seções de Navegação */
+.navSections {
+  display: flex;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.navSections section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.navSections h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1a3a32;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+.navSections a {
+  font-size: 0.95rem;
+  color: #666;
+  text-decoration: none;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  display: inline-block;
+  width: fit-content;
+}
+
+.navSections a:hover {
+  color: #1a3a32;
+  transform: translateX(4px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 4rem 1.5rem;
+  }
+  
+  .navSections {
+    gap: 40px;
+  }
+  
+  .brand {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .brand h2::after {
+    right: 50%;
+    margin-right: -75px; /* Ajuste manual para centralizar o ponto se necessário */
+  }
+}

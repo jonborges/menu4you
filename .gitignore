@@ -1,0 +1,58 @@
+# Arquivos de build e dependências
+node_modules/
+dist/
+dist-ssr/
+.vscode/
+.idea/
+
+# Backend
+backend/backend/target/
+backend/backend/.mvn/
+backend/backend/HELP.md
+backend/backend/uploads/
+
+# Documentação temporária (manter apenas DEPLOY.md e README.md)
+DEPLOYMENT.md
+CONFIGURACAO-PERFIS.md
+IMAGENS-PADRAO.md
+SISTEMA-IMAGENS-COMPLETO.md
+NOMES-ARQUIVOS.txt
+backend/backend/IMAGENS-PADRAO.md
+
+# Arquivos de configuração local
+.env
+.env.local
+.env.production
+backend/backend/src/main/resources/application.properties
+!backend/backend/src/main/resources/application.properties.example
+
+# SQL scripts com dados sensíveis
+update_passwords.sql
+*.sql
+
+# Pasta de uploads antigos
+uploads/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+.settings/
+.project
+.classpath
+
+# Diversos
+*.bak
+*.swp
+*.tmp
+~*

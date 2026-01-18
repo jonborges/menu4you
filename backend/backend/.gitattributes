@@ -1,0 +1,25 @@
+/mvnw text eol=lf
+*.cmd text eol=crlf
+
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Explicitly declare text files
+*.java text
+*.xml text
+*.properties text
+*.yml text
+*.yaml text
+*.json text
+*.md text
+*.txt text
+
+# Binary files - não fazer conversão de line endings
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.ico binary
+*.jar binary
+*.war binary
+*.class binary

@@ -1,0 +1,138 @@
+/* Variáveis para consistência */
+.pageWrapper {
+  --bg-primary: #fcfaf7;
+  --text-main: #2d2a26;
+  --brand-deep: #1a3a32;
+  --brand-accent: #f97316;
+  --card-bg: #ffffff;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  font-family: var(--font-sans);
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 6rem;
+}
+
+/* --- Hero Section (Boas Vindas) --- */
+.hero {
+  text-align: center;
+  padding: 4rem 0 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--brand-deep);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Barra de Busca e Filtros --- */
+.controls {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.searchWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 1.2rem 2rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  border: 1px solid rgba(26, 58, 50, 0.1); /* Brand deep bem sutil */
+  border-radius: 50px;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  color: var(--text-main);
+}
+
+.searchInput:focus {
+  border-color: var(--brand-accent);
+  box-shadow: 0 8px 30px rgba(249, 115, 22, 0.15);
+  transform: translateY(-2px);
+}
+
+.searchInput::placeholder {
+  color: #aaa;
+}
+
+/* Botão de ícone de busca (opcional, visual) */
+.searchIcon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--brand-deep);
+  pointer-events: none;
+  font-size: 1.2rem;
+}
+
+/* --- Grid de Restaurantes --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2.5rem; /* Espaço maior para respiro */
+  perspective: 1000px;
+}
+
+/* Estado de Carregamento / Vazio */
+.emptyState, .loading {
+  text-align: center;
+  padding: 4rem;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: #888;
+  font-style: italic;
+}
+
+/* Animação suave de entrada */
+.fadeIn {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  .container {
+    padding-top: 1rem;
+  }
+}
