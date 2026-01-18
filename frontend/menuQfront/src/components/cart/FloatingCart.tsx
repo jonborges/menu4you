@@ -1,18 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import styles from './FloatingCart.module.css';
 import { useCart } from '../../contexts/CartContext';
 import { useAuth } from '../../contexts/AuthContext';
 import { useNotification } from '../../contexts/NotificationContext';
 import { useUI } from '../../contexts/UIContext';
-import * as api from '../../services/api';
 
 export default function FloatingCart() {
   const { items, total, updateQty, removeItem, checkout } = useCart();
   const [open, setOpen] = useState(false);
   const { isLoggedIn, userId } = useAuth();
-  const [isOwner, setIsOwner] = useState(false);
-  const [checkingOwner, setCheckingOwner] = useState(false);
   const location = useLocation();
   
   const itemCount = items.reduce((s, i) => s + i.quantity, 0);
