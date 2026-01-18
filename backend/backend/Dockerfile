@@ -15,7 +15,7 @@ FROM eclipse-temurin:21-jre-jammy
 WORKDIR /app
 
 # Copy JAR from build stage
-COPY --from=build /app/target/*.jar app.jar
+COPY --from=build /app/target/backend-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose port (Railway will set $PORT)
 EXPOSE 8080
