@@ -88,7 +88,8 @@
   opacity: 0.8;
 }
 
-.navSections a {
+.navSections a,
+.navSections span {
   font-size: 0.95rem;
   color: #666;
   text-decoration: none;
@@ -106,20 +107,49 @@
 /* Responsividade */
 @media (max-width: 768px) {
   .container {
-    padding: 4rem 1.5rem;
+    padding: 3rem 1.5rem;
+    margin-top: 4rem;
   }
   
-  .navSections {
-    gap: 40px;
+  .content {
+    flex-direction: column;
+    gap: 32px;
   }
   
   .brand {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    min-width: 100%;
+  }
+  
+  .brand h2 {
+    font-size: 1.8rem;
   }
   
   .brand h2::after {
-    right: 50%;
-    margin-right: -75px; /* Ajuste manual para centralizar o ponto se necessário */
+    display: none;
+  }
+  
+  .brand p {
+    max-width: 100%;
+  }
+  
+  .copyright {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  
+  .navSections {
+    flex-direction: column;
+    gap: 28px;
+    width: 100%;
+  }
+  
+  .navSections section {
+    text-align: center;
+  }
+  
+  .navSections span {
+    color: #999;
   }
 }
