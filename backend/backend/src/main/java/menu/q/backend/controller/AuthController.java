@@ -2,6 +2,7 @@ package menu.q.backend.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -63,10 +64,14 @@ public class AuthController {
             String token = jwtUtil.generateToken(req.username());
             
             return ResponseEntity.ok(new AuthResponse(token, user.getId(), user.getUsername(), user.getEmail()));
+        } catch (BadCredentialsException e) {
+            return ResponseEntity.status(401).body("Usuário ou senha inválidos");
         } catch (Exception e) {
-            System.out.println("Login failed: " + e.getMessage());
+            System.err.println("=== LOGIN ERROR ===");
+            System.err.println("Class: " + e.getClass().getName());
+            System.err.println("Message: " + e.getMessage());
             e.printStackTrace();
-            return ResponseEntity.status(401).body("Credenciais inválidas");
+            return ResponseEntity.status(500).body("Erro no servidor: " + e.getMessage());
         }
     }
 }

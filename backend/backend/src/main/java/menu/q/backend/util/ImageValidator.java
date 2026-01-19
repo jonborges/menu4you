@@ -1,6 +1,7 @@
 package menu.q.backend.util;
 
 import menu.q.backend.model.DefaultImage;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import java.util.Base64;
 import java.util.Set;
@@ -10,6 +11,9 @@ public class ImageValidator {
 
     private static final long MAX_IMAGE_SIZE_BYTES = 5 * 1024 * 1024; // 5MB
     private static final Set<String> ALLOWED_TYPES = Set.of("image/jpeg", "image/png", "image/webp", "image/jpg");
+    
+    @Value("${app.base-url:http://localhost:8080}")
+    private String baseUrl;
     
     /**
      * Valida uma imagem. Aceita IDs de imagens padrão, nomes de capa de restaurante, ou base64 (deprecated).
@@ -103,12 +107,12 @@ public class ImageValidator {
 
         // Se for um nome de capa de restaurante, retornar o caminho para a pasta de capas
         if (image.matches("^cover_restaurant_[1-4]\\.jpg$")) {
-            return "http://localhost:8080/default-images/covers/" + image;
+            return baseUrl + "/default-images/covers/" + image;
         }
 
         // Se for um arquivo de imagem de item (acai.jpg, bebidas.jpg, etc)
         if (image.matches("^(acai|bebidas|brasileira|doces|fitness|japonesa|lanche|pizza)\\.jpg$")) {
-            return "http://localhost:8080/default-images/items/" + image;
+            return baseUrl + "/default-images/items/" + image;
         }
 
         // Se for um ID de imagem padrão, retornar a URL
