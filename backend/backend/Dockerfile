@@ -17,6 +17,9 @@ WORKDIR /app
 # Copy JAR from build stage
 COPY --from=build /app/target/backend-0.0.1-SNAPSHOT.jar app.jar
 
+# Copy default images
+COPY default-images ./default-images
+
 # Expose port
 EXPOSE 8080
 
