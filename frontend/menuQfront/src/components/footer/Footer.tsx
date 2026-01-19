@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -16,21 +15,21 @@ export default function Footer() {
         <div className={styles.navSections}>
           <section aria-label="Institucional">
             <h3>Institucional</h3>
-            <Link to="/sobre">Sobre Nós</Link>
-            <Link to="/restaurantes">Restaurantes</Link>
+            <span>Sobre Nós</span>
+            <span>Restaurantes</span>
           </section>
 
           <section aria-label="Suporte">
             <h3>Suporte</h3>
-            <Link to="/contato">Contato</Link>
-            <Link to="/termos">Termos de Serviço</Link>
-            <Link to="/privacidade">Privacidade</Link>
+            <span>Contato</span>
+            <span>Termos de Serviço</span>
+            <span>Privacidade</span>
           </section>
 
           <section aria-label="Social">
             <h3>Social</h3>
-            <a href="#" aria-label="Menu2You no Instagram">Instagram</a>
-            <a href="#" aria-label="Menu2You no TikTok">TikTok</a>
+            <span>Instagram</span>
+            <span>TikTok</span>
           </section>
         </div>
 
