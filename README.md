@@ -1,11 +1,11 @@
-# 🍽️ MenuQ - Sistema de Cardápio Digital 
+# 🍽️ Menu4You - Sistema de Cardápio Digital 
 LINK DO SITE(ON): https://menu4you-murex.vercel.app/
 
 Sistema completo de cardápio digital para restaurantes com QR Code, pedidos online e gerenciamento de mesas.
 
 ## 📋 Sobre o Projeto
 
-MenuQ é uma plataforma web que permite restaurantes criarem cardápios digitais acessíveis via QR Code. Clientes podem escanear o código na mesa, visualizar o cardápio com fotos, fazer pedidos e o restaurante recebe tudo em tempo real no dashboard.
+Menu4You é uma plataforma web que permite restaurantes criarem cardápios digitais acessíveis via QR Code. Clientes podem escanear o código na mesa, visualizar o cardápio com fotos, fazer pedidos e o restaurante recebe tudo em tempo real no dashboard.
 
 ### ✨ Funcionalidades Principais
 
@@ -64,9 +64,9 @@ Veja o guia completo em [COMO EXECUTAR LOCALMENTE](#executar-localmente).
 ### 1️⃣ Configurar o Banco de Dados
 
 ```sql
-CREATE DATABASE MenuQ;
-CREATE USER 'menuq_user'@'localhost' IDENTIFIED BY 'sua_senha';
-GRANT ALL PRIVILEGES ON MenuQ.* TO 'menuq_user'@'localhost';
+CREATE DATABASE Menu4You;
+CREATE USER 'xxxxx_user'@'localhost' IDENTIFIED BY 'sua_senha';
+GRANT ALL PRIVILEGES ON xxxx.* TO 'xxx_user'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
@@ -80,8 +80,8 @@ cd backend/backend
 2. Configure o arquivo `src/main/resources/application.properties`:
 ```properties
 spring.application.name=backend
-spring.datasource.url=jdbc:mysql://localhost:3306/MenuQ
-spring.datasource.username=menuq_user
+spring.datasource.url=jdbc:mysql://localhost:3306/xxxxx
+spring.datasource.username=xxxx_user
 spring.datasource.password=sua_senha
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=false
@@ -101,7 +101,7 @@ O backend estará disponível em `http://localhost:8080`
 
 1. Navegue até a pasta do frontend:
 ```bash
-cd frontend/menuQfront
+cd frontend/xxxxfront
 ```
 
 2. Instale as dependências:
@@ -119,7 +119,7 @@ O frontend estará disponível em `http://localhost:5173`
 ## 📁 Estrutura do Projeto
 
 ```
-MenuQ/
+Menu4You/
 ├── backend/
 │   └── backend/
 │       ├── src/
@@ -141,7 +141,7 @@ MenuQ/
 │       └── pom.xml
 │
 └── frontend/
-    └── menuQfront/
+    └── menu4Youfront/
         ├── src/
         │   ├── components/             # Componentes reutilizáveis
         │   │   ├── cart/               # Carrinho flutuante
