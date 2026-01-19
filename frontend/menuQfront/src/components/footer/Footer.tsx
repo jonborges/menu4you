@@ -9,7 +9,7 @@ export default function Footer() {
 
         <div className={styles.brand}>
           <h2>Menu4You</h2>
-          <p className={styles.copyright}>&copy; {currentYear} Menu2You. Todos os direitos reservados.</p>
+          <p className={styles.copyright}>&copy; {currentYear} Menu4You. Todos os direitos reservados.</p>
         </div>
 
         <div className={styles.navSections}>
